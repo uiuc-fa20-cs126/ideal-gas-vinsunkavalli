@@ -1,0 +1,2 @@
+C:/Users/buddi/Cinder/my-projects/ideal-gas-vinsunkavalli/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/buddi/Cinder/my-projects/ideal-gas-vinsunkavalli/cmake-build-debug/CMakeFiles/rebuild_cache.dir
