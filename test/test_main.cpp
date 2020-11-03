@@ -1,3 +1,10 @@
+#include <catch2/catch.hpp>
+
+#include "../../../include/glm/glm.hpp"
+
+#include <particle.h>
+#include <simulation.h>
+
 TEST_CASE("Particle") {
   SECTION("Creating a particle") {
     Particle test_particle (1, 0, 0, 0, 0);
@@ -8,7 +15,7 @@ TEST_CASE("Particle") {
 
   SECTION("Updating particle position") {
     Particle test_particle (1, 0, 0, 0, 0);
-    test_particle.update();
+    test_particle.updatePosition();
     REQUIRE(test_particle.getPosition() == glm::vec2());
   }
 
@@ -43,17 +50,17 @@ TEST_CASE("Simulation") {
   SECTION("Wall collision") {
     std::vector<Particle> particles (1, Particle(1, 0, 0, -0.1, -0.1));
     Simulation simulation (particles, 1, 1);
-    simulation.wallCollision()
-    REQUIRE(simulation.getParticles[0].getVelocity() == glm::vec2());
+    simulation.wallCollision(particles[0]);
+    REQUIRE(simulation.getParticles()[0].getVelocity() == glm::vec2());
   }
 
   SECTION("Particle collision") {
     std::vector<Particle> particles;
-    particles.add();
-    particles.add();
+    particles.push_back(Particle());
+    particles.push_back(Particle());
 
     Simulation simulation (particles, 1, 1);
-    simulation.wallCollision()
-    REQUIRE(simulation.getParticles[0].getVelocity() == glm::vec2() && simulation.getParticles[1].getVelocity());
+    simulation.particleCollision(particles[0], particles[1]);
+    REQUIRE(simulation.getParticles()[0].getVelocity() == glm::vec2() && simulation.getParticles()[1].getVelocity());
   }
 }

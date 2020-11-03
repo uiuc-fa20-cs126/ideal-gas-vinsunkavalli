@@ -60,17 +60,6 @@ CMAKE_BINARY_DIR = C:\Users\buddi\Cinder\my-projects\ideal-gas-vinsunkavalli\cma
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	C:\Users\buddi\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\202.7319.72\bin\cmake\win\bin\cmake.exe -E echo "No interactive CMake dialog available."
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache\fast: edit_cache
-
-.PHONY : edit_cache\fast
-
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -81,6 +70,17 @@ rebuild_cache:
 rebuild_cache\fast: rebuild_cache
 
 .PHONY : rebuild_cache\fast
+
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	C:\Users\buddi\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\202.7319.72\bin\cmake\win\bin\cmake.exe -E echo "No interactive CMake dialog available."
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache\fast: edit_cache
+
+.PHONY : edit_cache\fast
 
 # The main all target
 all: cmake_check_build_system
@@ -114,6 +114,156 @@ depend:
 	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 1
 .PHONY : depend
 
+#=============================================================================
+# Target rules for targets named ideal-gas-simulation
+
+# Build rule for target.
+ideal-gas-simulation: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) ideal-gas-simulation
+.PHONY : ideal-gas-simulation
+
+# fast build rule for target.
+ideal-gas-simulation\fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ideal-gas-simulation.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ideal-gas-simulation.dir\build
+.PHONY : ideal-gas-simulation\fast
+
+#=============================================================================
+# Target rules for targets named cinder-simulation
+
+# Build rule for target.
+cinder-simulation: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) cinder-simulation
+.PHONY : cinder-simulation
+
+# fast build rule for target.
+cinder-simulation\fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\cinder-simulation.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\cinder-simulation.dir\build
+.PHONY : cinder-simulation\fast
+
+#=============================================================================
+# Target rules for targets named ideal-gas-test
+
+# Build rule for target.
+ideal-gas-test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) ideal-gas-test
+.PHONY : ideal-gas-test
+
+# fast build rule for target.
+ideal-gas-test\fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ideal-gas-test.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ideal-gas-test.dir\build
+.PHONY : ideal-gas-test\fast
+
+app\cinder_main.obj: app\cinder_main.cpp.obj
+
+.PHONY : app\cinder_main.obj
+
+# target to build an object file
+app\cinder_main.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ideal-gas-simulation.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ideal-gas-simulation.dir\app\cinder_main.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\cinder-simulation.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\cinder-simulation.dir\app\cinder_main.cpp.obj
+.PHONY : app\cinder_main.cpp.obj
+
+app\cinder_main.i: app\cinder_main.cpp.i
+
+.PHONY : app\cinder_main.i
+
+# target to preprocess a source file
+app\cinder_main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ideal-gas-simulation.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ideal-gas-simulation.dir\app\cinder_main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\cinder-simulation.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\cinder-simulation.dir\app\cinder_main.cpp.i
+.PHONY : app\cinder_main.cpp.i
+
+app\cinder_main.s: app\cinder_main.cpp.s
+
+.PHONY : app\cinder_main.s
+
+# target to generate assembly for a file
+app\cinder_main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ideal-gas-simulation.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ideal-gas-simulation.dir\app\cinder_main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\cinder-simulation.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\cinder-simulation.dir\app\cinder_main.cpp.s
+.PHONY : app\cinder_main.cpp.s
+
+src\particle.obj: src\particle.cpp.obj
+
+.PHONY : src\particle.obj
+
+# target to build an object file
+src\particle.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ideal-gas-simulation.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ideal-gas-simulation.dir\src\particle.cpp.obj
+.PHONY : src\particle.cpp.obj
+
+src\particle.i: src\particle.cpp.i
+
+.PHONY : src\particle.i
+
+# target to preprocess a source file
+src\particle.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ideal-gas-simulation.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ideal-gas-simulation.dir\src\particle.cpp.i
+.PHONY : src\particle.cpp.i
+
+src\particle.s: src\particle.cpp.s
+
+.PHONY : src\particle.s
+
+# target to generate assembly for a file
+src\particle.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ideal-gas-simulation.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ideal-gas-simulation.dir\src\particle.cpp.s
+.PHONY : src\particle.cpp.s
+
+src\simulation.obj: src\simulation.cpp.obj
+
+.PHONY : src\simulation.obj
+
+# target to build an object file
+src\simulation.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ideal-gas-simulation.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ideal-gas-simulation.dir\src\simulation.cpp.obj
+.PHONY : src\simulation.cpp.obj
+
+src\simulation.i: src\simulation.cpp.i
+
+.PHONY : src\simulation.i
+
+# target to preprocess a source file
+src\simulation.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ideal-gas-simulation.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ideal-gas-simulation.dir\src\simulation.cpp.i
+.PHONY : src\simulation.cpp.i
+
+src\simulation.s: src\simulation.cpp.s
+
+.PHONY : src\simulation.s
+
+# target to generate assembly for a file
+src\simulation.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ideal-gas-simulation.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ideal-gas-simulation.dir\src\simulation.cpp.s
+.PHONY : src\simulation.cpp.s
+
+test\test_main.obj: test\test_main.cpp.obj
+
+.PHONY : test\test_main.obj
+
+# target to build an object file
+test\test_main.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ideal-gas-test.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ideal-gas-test.dir\test\test_main.cpp.obj
+.PHONY : test\test_main.cpp.obj
+
+test\test_main.i: test\test_main.cpp.i
+
+.PHONY : test\test_main.i
+
+# target to preprocess a source file
+test\test_main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ideal-gas-test.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ideal-gas-test.dir\test\test_main.cpp.i
+.PHONY : test\test_main.cpp.i
+
+test\test_main.s: test\test_main.cpp.s
+
+.PHONY : test\test_main.s
+
+# target to generate assembly for a file
+test\test_main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ideal-gas-test.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ideal-gas-test.dir\test\test_main.cpp.s
+.PHONY : test\test_main.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -122,6 +272,21 @@ help:
 	@echo ... depend
 	@echo ... edit_cache
 	@echo ... rebuild_cache
+	@echo ... cinder-simulation
+	@echo ... ideal-gas-simulation
+	@echo ... ideal-gas-test
+	@echo ... app/cinder_main.obj
+	@echo ... app/cinder_main.i
+	@echo ... app/cinder_main.s
+	@echo ... src/particle.obj
+	@echo ... src/particle.i
+	@echo ... src/particle.s
+	@echo ... src/simulation.obj
+	@echo ... src/simulation.i
+	@echo ... src/simulation.s
+	@echo ... test/test_main.obj
+	@echo ... test/test_main.i
+	@echo ... test/test_main.s
 .PHONY : help
 
 

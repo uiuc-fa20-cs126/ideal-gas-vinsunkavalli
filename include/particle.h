@@ -1,7 +1,7 @@
 #ifndef IDEAL_GAS_VINSUNKAVALLI__PARTICLE_H_
 #define IDEAL_GAS_VINSUNKAVALLI__PARTICLE_H_
 
-#include <glm/glm.hpp>
+#include "../../../include/glm/glm.hpp"
 
 class Particle {
  private:
@@ -12,12 +12,12 @@ class Particle {
  public:
   Particle(double radius, double posX, double posY, double velX, double velY);
 
-  updatePosition();//meant to be run after every unit of time (i.e. after every 1 frame)
+  void updatePosition();//meant to be run after every unit of time (i.e. after every 1 frame)
 
-  getPosition();
-  getVelocity();
+  glm::vec2 getPosition();
+  glm::vec2 getVelocity();
 
-  setVelocity(double velX, double velY);//used for collisions - handled in simulation
+  void setVelocity(double velX, double velY);//used for collisions - handled in simulation
 };
 
 #endif //IDEAL_GAS_VINSUNKAVALLI__PARTICLE_H_

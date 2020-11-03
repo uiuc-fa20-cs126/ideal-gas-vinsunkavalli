@@ -20,12 +20,16 @@
       <path>
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="BRANCH:main" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:week1" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </select>
   </component>
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
-    <generated />
+    <generated>
+      <config projectName="ideal-gas" targetName="ideal-gas-test" />
+      <config projectName="ideal-gas" targetName="cinder-simulation" />
+      <config projectName="ideal-gas" targetName="ideal-gas-simulation" />
+    </generated>
   </component>
   <component name="CMakeSettings">
     <configurations>
@@ -34,13 +38,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="15cde8c2-da47-4968-90cb-9bda7bc5da4f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/cinder_main.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/include/particle.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/include/simulation.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/particle.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/simulation.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/test_main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/particle.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/particle.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/test_main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/test/test_main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,7 +58,26 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="Git.Settings">
+    <favorite-branches>
+      <branch-storage>
+        <map>
+          <entry type="LOCAL">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="week1" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </favorite-branches>
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1jiLmfnJmAG4yk5vY3iIar00Hpj" />
@@ -64,8 +91,23 @@
     <property name="cf.first.check.clang-format" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
-  <component name="RunManager">
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
+  <component name="RunManager" selected="CMake Application.cinder-simulation">
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="cinder-simulation" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ideal-gas" TARGET_NAME="cinder-simulation" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="ideal-gas" RUN_TARGET_NAME="cinder-simulation">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ideal-gas-simulation" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ideal-gas" TARGET_NAME="ideal-gas-simulation" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="ideal-gas" RUN_TARGET_NAME="ideal-gas-simulation">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ideal-gas-test" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ideal-gas" TARGET_NAME="ideal-gas-test" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="ideal-gas" RUN_TARGET_NAME="ideal-gas-test">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -75,6 +117,11 @@
         <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="CMake Application.cinder-simulation" />
+      <item itemvalue="CMake Application.ideal-gas-simulation" />
+      <item itemvalue="CMake Application.ideal-gas-test" />
+    </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -87,7 +134,24 @@
       <workItem from="1604282129284" duration="193000" />
       <workItem from="1604282332411" duration="97000" />
       <workItem from="1604282441801" duration="127000" />
+      <workItem from="1604282584369" duration="327000" />
+      <workItem from="1604361627594" duration="1319000" />
     </task>
+    <task id="LOCAL-00001" summary="Added all files and coded headers + tests - coded yesterday but accidentally committed to main branch">
+      <created>1604282871927</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1604282871927</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Added all files and coded headers + tests - coded yesterday but accidentally committed to main branch">
+      <created>1604282882372</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1604282882372</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -104,7 +168,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="main" />
+                        <option value="week1" />
                       </list>
                     </value>
                   </entry>
@@ -117,10 +181,18 @@
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Added all files and coded headers + tests - coded yesterday but accidentally committed to main branch" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added all files and coded headers + tests - coded yesterday but accidentally committed to main branch" />
+  </component>
   <component name="WindowStateProjectService">
     <state x="634" y="273" key="FileChooserDialogImpl" timestamp="1604282556213">
       <screen x="0" y="0" width="1707" height="1036" />
     </state>
     <state x="634" y="273" key="FileChooserDialogImpl/0.0.1707.1036@0.0.1707.1036" timestamp="1604282556213" />
+    <state x="446" y="251" key="Vcs.Push.Dialog.v2" timestamp="1604282850840">
+      <screen x="0" y="0" width="1707" height="1036" />
+    </state>
+    <state x="446" y="251" key="Vcs.Push.Dialog.v2/0.0.1707.1036@0.0.1707.1036" timestamp="1604282850840" />
   </component>
 </project>
