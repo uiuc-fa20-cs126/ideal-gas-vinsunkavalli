@@ -115,19 +115,6 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named ideal-gas-simulation
-
-# Build rule for target.
-ideal-gas-simulation: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) ideal-gas-simulation
-.PHONY : ideal-gas-simulation
-
-# fast build rule for target.
-ideal-gas-simulation\fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ideal-gas-simulation.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ideal-gas-simulation.dir\build
-.PHONY : ideal-gas-simulation\fast
-
-#=============================================================================
 # Target rules for targets named cinder-simulation
 
 # Build rule for target.
@@ -159,7 +146,6 @@ app\cinder_main.obj: app\cinder_main.cpp.obj
 
 # target to build an object file
 app\cinder_main.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ideal-gas-simulation.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ideal-gas-simulation.dir\app\cinder_main.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\cinder-simulation.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\cinder-simulation.dir\app\cinder_main.cpp.obj
 .PHONY : app\cinder_main.cpp.obj
 
@@ -169,7 +155,6 @@ app\cinder_main.i: app\cinder_main.cpp.i
 
 # target to preprocess a source file
 app\cinder_main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ideal-gas-simulation.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ideal-gas-simulation.dir\app\cinder_main.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\cinder-simulation.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\cinder-simulation.dir\app\cinder_main.cpp.i
 .PHONY : app\cinder_main.cpp.i
 
@@ -179,7 +164,6 @@ app\cinder_main.s: app\cinder_main.cpp.s
 
 # target to generate assembly for a file
 app\cinder_main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ideal-gas-simulation.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ideal-gas-simulation.dir\app\cinder_main.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\cinder-simulation.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\cinder-simulation.dir\app\cinder_main.cpp.s
 .PHONY : app\cinder_main.cpp.s
 
@@ -189,7 +173,8 @@ src\particle.obj: src\particle.cpp.obj
 
 # target to build an object file
 src\particle.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ideal-gas-simulation.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ideal-gas-simulation.dir\src\particle.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\cinder-simulation.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\cinder-simulation.dir\src\particle.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ideal-gas-test.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ideal-gas-test.dir\src\particle.cpp.obj
 .PHONY : src\particle.cpp.obj
 
 src\particle.i: src\particle.cpp.i
@@ -198,7 +183,8 @@ src\particle.i: src\particle.cpp.i
 
 # target to preprocess a source file
 src\particle.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ideal-gas-simulation.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ideal-gas-simulation.dir\src\particle.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\cinder-simulation.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\cinder-simulation.dir\src\particle.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ideal-gas-test.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ideal-gas-test.dir\src\particle.cpp.i
 .PHONY : src\particle.cpp.i
 
 src\particle.s: src\particle.cpp.s
@@ -207,7 +193,8 @@ src\particle.s: src\particle.cpp.s
 
 # target to generate assembly for a file
 src\particle.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ideal-gas-simulation.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ideal-gas-simulation.dir\src\particle.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\cinder-simulation.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\cinder-simulation.dir\src\particle.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ideal-gas-test.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ideal-gas-test.dir\src\particle.cpp.s
 .PHONY : src\particle.cpp.s
 
 src\simulation.obj: src\simulation.cpp.obj
@@ -216,7 +203,8 @@ src\simulation.obj: src\simulation.cpp.obj
 
 # target to build an object file
 src\simulation.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ideal-gas-simulation.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ideal-gas-simulation.dir\src\simulation.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\cinder-simulation.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\cinder-simulation.dir\src\simulation.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ideal-gas-test.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ideal-gas-test.dir\src\simulation.cpp.obj
 .PHONY : src\simulation.cpp.obj
 
 src\simulation.i: src\simulation.cpp.i
@@ -225,7 +213,8 @@ src\simulation.i: src\simulation.cpp.i
 
 # target to preprocess a source file
 src\simulation.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ideal-gas-simulation.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ideal-gas-simulation.dir\src\simulation.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\cinder-simulation.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\cinder-simulation.dir\src\simulation.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ideal-gas-test.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ideal-gas-test.dir\src\simulation.cpp.i
 .PHONY : src\simulation.cpp.i
 
 src\simulation.s: src\simulation.cpp.s
@@ -234,7 +223,8 @@ src\simulation.s: src\simulation.cpp.s
 
 # target to generate assembly for a file
 src\simulation.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\ideal-gas-simulation.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ideal-gas-simulation.dir\src\simulation.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\cinder-simulation.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\cinder-simulation.dir\src\simulation.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ideal-gas-test.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ideal-gas-test.dir\src\simulation.cpp.s
 .PHONY : src\simulation.cpp.s
 
 test\test_main.obj: test\test_main.cpp.obj
@@ -273,7 +263,6 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... cinder-simulation
-	@echo ... ideal-gas-simulation
 	@echo ... ideal-gas-test
 	@echo ... app/cinder_main.obj
 	@echo ... app/cinder_main.i

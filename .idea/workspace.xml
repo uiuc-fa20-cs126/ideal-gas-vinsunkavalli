@@ -40,14 +40,12 @@
     <list default="true" id="15cde8c2-da47-4968-90cb-9bda7bc5da4f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/ideal-gas.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/ideal-gas.cbp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/include/particle.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/particle.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/simulation.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/simulation.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/particle.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/particle.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/simulation.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/simulation.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/test_main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/test/test_main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -80,6 +78,9 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="OCResolveContextSettings">
+    <option name="configuration" value="0-Debug-ideal-gas-simulation" />
+  </component>
   <component name="ProjectId" id="1jiLmfnJmAG4yk5vY3iIar00Hpj" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -91,18 +92,24 @@
     <property name="cf.first.check.clang-format" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
-  <component name="RunManager" selected="CMake Application.cinder-simulation">
+  <component name="RunManager" selected="Catch.Particle">
     <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
         <option name="CLION.EXTERNAL.BUILD" enabled="true" />
       </method>
     </configuration>
-    <configuration name="cinder-simulation" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ideal-gas" TARGET_NAME="cinder-simulation" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="ideal-gas" RUN_TARGET_NAME="cinder-simulation">
+    <configuration name="Particle" type="CMakeCatchTestRunConfigurationType" factoryName="Catch Test" temporary="true" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ideal-gas" TARGET_NAME="ideal-gas-test" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="ideal-gas" RUN_TARGET_NAME="ideal-gas-test" TEST_METHOD="Particle" TEST_MODE="SUITE_TEST">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+        <option name="BeforeTestRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ideal-gas-simulation" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ideal-gas" TARGET_NAME="ideal-gas-simulation" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="ideal-gas" RUN_TARGET_NAME="ideal-gas-simulation">
+    <configuration name="cinder-simulation" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ideal-gas" TARGET_NAME="cinder-simulation" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="ideal-gas" RUN_TARGET_NAME="cinder-simulation">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -112,16 +119,16 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
     <list>
+      <item itemvalue="Catch.Particle" />
       <item itemvalue="CMake Application.cinder-simulation" />
-      <item itemvalue="CMake Application.ideal-gas-simulation" />
       <item itemvalue="CMake Application.ideal-gas-test" />
     </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Catch.Particle" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -135,7 +142,9 @@
       <workItem from="1604282332411" duration="97000" />
       <workItem from="1604282441801" duration="127000" />
       <workItem from="1604282584369" duration="327000" />
-      <workItem from="1604361627594" duration="1319000" />
+      <workItem from="1604361627594" duration="4231000" />
+      <workItem from="1604398187371" duration="1313000" />
+      <workItem from="1604427146182" duration="9244000" />
     </task>
     <task id="LOCAL-00001" summary="Added all files and coded headers + tests - coded yesterday but accidentally committed to main branch">
       <created>1604282871927</created>
@@ -151,7 +160,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604282882372</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Wrote CMakeLists.txt and corrected some mistakes in headers and test">
+      <created>1604366392468</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1604366392468</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -183,9 +199,18 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added all files and coded headers + tests - coded yesterday but accidentally committed to main branch" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added all files and coded headers + tests - coded yesterday but accidentally committed to main branch" />
+    <MESSAGE value="Wrote CMakeLists.txt and corrected some mistakes in headers and test" />
+    <option name="LAST_COMMIT_MESSAGE" value="Wrote CMakeLists.txt and corrected some mistakes in headers and test" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="309" y="173" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1604439306550">
+      <screen x="0" y="0" width="1707" height="1036" />
+    </state>
+    <state x="309" y="173" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1707.1036@0.0.1707.1036" timestamp="1604439306550" />
+    <state x="637" y="234" key="#com.intellij.ide.util.MemberChooser" timestamp="1604372526642">
+      <screen x="0" y="0" width="1707" height="1036" />
+    </state>
+    <state x="637" y="234" key="#com.intellij.ide.util.MemberChooser/0.0.1707.1036@0.0.1707.1036" timestamp="1604372526642" />
     <state x="634" y="273" key="FileChooserDialogImpl" timestamp="1604282556213">
       <screen x="0" y="0" width="1707" height="1036" />
     </state>

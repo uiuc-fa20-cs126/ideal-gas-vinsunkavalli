@@ -49,13 +49,10 @@ get_filename_component(APP_PATH "${CMAKE_CURRENT_SOURCE_DIR}/" ABSOLUTE)
 
 include("${CINDER_PATH}/proj/cmake/modules/cinderMakeApp.cmake")
 
-list(APPEND CORE_SOURCE_FILES src/particle.cpp)
-list(APPEND CORE_SOURCE_FILES src/simulation.cpp)
+list(APPEND SOURCE_FILES src/particle.cpp)
+list(APPEND SOURCE_FILES src/simulation.cpp)
 
 list(APPEND TEST_FILES test/test_main.cpp)
-
-add_executable(ideal-gas-simulation app/cinder_main.cpp ${CORE_SOURCE_FILES})
-target_include_directories(ideal-gas-simulation PRIVATE include)
 
 ci_make_app(
         APP_NAME cinder-simulation
@@ -67,7 +64,7 @@ ci_make_app(
 ci_make_app(
         APP_NAME ideal-gas-test
         CINDER_PATH ${CINDER_PATH}
-        SOURCES test/test_main.cpp ${SOURCE_FILES} ${TEST_FILES}
+        SOURCES ${SOURCE_FILES} ${TEST_FILES}
         INCLUDES include
         LIBRARIES catch2
 )
