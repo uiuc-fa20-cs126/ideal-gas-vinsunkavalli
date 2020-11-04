@@ -27,7 +27,6 @@ TEST_CASE("Particle") {
 }
 
 TEST_CASE("Simulation") {
-  //TODO Test creating simulation from vector (including invalid particles), running invalid wall/particle collision, and handling more than two particles colliding at the same time
 
   SECTION("Create a simulation") {
     Simulation simulation (1, 1, 1);

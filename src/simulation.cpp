@@ -1,11 +1,11 @@
 #include <simulation.h>
 
-const int radius = 1;
+const double radius = 0.2;
 const double velPosScale = 100;//velocity should be smaller than pos, so dividing by this
 
 Simulation::Simulation(int num_particles, double maxX, double maxY) {
   for(size_t i = 0; i < (unsigned) num_particles; ++i) {
-    particles.push_back(Particle(1, (std::rand() % 10 / 10.0) * maxX, (std::rand() % 10 / 10.0) * maxY, ((std::rand() % 10 / 10.0) * maxX)/velPosScale, ((std::rand() % 10 / 10.0) * maxY)/velPosScale));
+    particles.push_back(Particle(radius, (std::rand() % 10 / 10.0) * (maxX - radius) + radius, (std::rand() % 10 / 10.0) * (maxY - radius) + radius, ((std::rand() % 10 / 10.0) * maxX)/velPosScale, ((std::rand() % 10 / 10.0) * maxY)/velPosScale));
   }
 
   boundX = maxX;
@@ -34,75 +34,67 @@ std::vector<Particle> & Simulation::getParticles() {
 void Simulation::update() {
   for(size_t i = 0; i < particles.size(); ++i) {
     particles[i].updatePosition();
-    //handleCollision(particle);
+    particles[i] = handleCollision(particles[i]);
   }
 }
 
-void Simulation::handleCollision(Particle& particle) {
+Particle& Simulation::handleCollision(Particle& particle) {
   //check for wall collision - particle's updated velocity will hit wall
 
-  //TODO Check that particles are moving towards wall
-
-  if(!checkBounds(particle, boundX, boundY)) {
-    wallCollision(particle);
+  if(checkBounds(particle, boundX, boundY) &&
+  ((glm::dot((particle.getVelocity() - glm::vec2(0, 0)), (particle.getPosition() - glm::vec2(0, 0))) >= 0) ||
+  ((glm::dot((particle.getVelocity() - glm::vec2(0, 0)), (particle.getPosition() - glm::vec2(boundX, boundY))) >= 0)))) {
+    particle = wallCollision(particle);
   }
 
   //check for particle collision - particle is heading towards another particle
   for(size_t i = 0; i < particles.size(); ++i) {
     Particle other = particles[i];
 
-    //TODO Check that particles aren't same and that particles are moving towards one another
-
-    if((particleDistance(particle, other)) <= 0) {
-      particleCollision(particle, other);
+    if(!checkEqual(particle, other) && (particleDistance(particle, other)) <= radius * 2 &&
+    glm::dot((particle.getVelocity() - other.getVelocity()), (particle.getPosition() - other.getPosition())) < 0) {
+      Particle temp_particle = particleCollision(particle, other);
+      particles[i] = particleCollision(other, particle);
+      particle = temp_particle;
     }
   }
+
+  return particle;
 }
 
-void Simulation::wallCollision(Particle &particle) {
+Particle& Simulation::wallCollision(Particle &particle) {
   glm::vec2 pos = particle.getPosition();
   glm::vec2 vel = particle.getVelocity();
 
-  if(pos.x <= 0 || pos.x >= boundX) {
-    particle.setVelocity(-1 * vel.x, 0);
-  }else if(pos.x <= 0 || pos.x >= boundX) {
-    particle.setVelocity(0, -1 * vel.y);
-  }
-}
+  double radius = particle.getRadius();
 
-void Simulation::particleCollision(Particle &particle1, Particle &particle2) {
-  particle1.setVelocity(0.0, 0.0);
-  particle2.setVelocity(0.0, 0.0);
-}
-
-
-/*
-std::vector<int> particles_collided;
-
-  for(size_t i = 0; i < particles.size() - 1; ++i) {
-    Particle particle1 = particles[i];
-    for(size_t j = i + 1; j < particles.size(); ++j) {
-      Particle particle2 = particles[j];
-
-      if((std::find(particles_collided.begin(), particles_collided.end(), i) != particles_collided.end()) &&
-      (std::find(particles_collided.begin(), particles_collided.end(), j) != particles_collided.end()) &&
-          ((particle1.getPosition() + particle1.getVelocity() - particle2.getPosition() - particle2.getVelocity()).length() <
-          particle1.getRadius() + particle2.getRadius()) &&
-          (glm::dot((particle1.getPosition() - particle1.getVelocity()), (particle2.getPosition() - particle2.getVelocity())) < 0)) {
-        particleCollision(particle1, particle2);
-        particles_collided.push_back(i);
-        particles_collided.push_back(j);
-      }
+  if(glm::dot(vel, (pos - glm::vec2(0, 0))) < radius ||
+  glm::dot(vel, (pos - glm::vec2(boundX, boundY))) < radius) {
+    if(pos.x - radius < 0 || pos.x + radius > boundX) {
+      particle.setVelocity(-1 * vel.x, vel.y);
+    }else if(pos.y - radius < 0 || pos.y + radius > boundY) {
+      particle.setVelocity(vel.x, -1 * vel.y);
     }
   }
 
-    for(size_t i = 0; i < particles.size(); ++i) {
-    Particle particle = particles[i];
-    glm::vec2 particle_path = (particle.getPosition() + particle.getVelocity());
+  return particle;
+}
 
-    if((std::find(particles_collided.begin(), particles_collided.end(), i) == particles_collided.end()) &&
-        ((particle_path.x + radius >= boundX || particle_path.y + radius >= boundY) || (particle_path.x - radius <= 0 || particle_path.y - radius <= 0))) {
-      wallCollision(particle);
-    }
-  }
- */
+Particle& Simulation::particleCollision(Particle &particle1, Particle &particle2) {
+  glm::vec2 pos1 = particle1.getPosition();
+  glm::vec2 pos2 = particle2.getPosition();
+
+  glm::vec2 vel1 = particle1.getVelocity();
+  glm::vec2 vel2 = particle2.getVelocity();
+
+  glm::vec2 newVel1;
+
+  double length = (particleDistance(particle1, particle2));
+  double posCoeff = glm::dot((vel1-vel2), (pos1-pos2))/(length * length);
+
+  newVel1 = vel1 - (glm::vec2(posCoeff, posCoeff) * (pos1 - pos2));
+
+  particle1.setVelocity(newVel1.x, newVel1.y);
+
+  return particle1;
+}

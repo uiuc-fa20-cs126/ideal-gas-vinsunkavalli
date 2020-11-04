@@ -16,12 +16,21 @@ class Simulation {
 
   bool checkBounds(Particle& particle, double maxX, double maxY) {
     glm::vec2 pos = particle.getPosition();
+    double radius = particle.getRadius();
 
-    return (pos.x >= maxX || pos.y >= maxY) || (pos.x <= 0 || pos.y <= 0);
+    return (pos.x + radius >= maxX || pos.y + radius >= maxY) || (pos.x - radius <= 0 || pos.y - radius <= 0);
   }
 
   double particleDistance(Particle& particle1, Particle& particle2) {
-    return (particle1.getPosition() - particle2.getPosition()).length();
+    double length =  abs(glm::length(particle1.getPosition() - particle2.getPosition()));
+
+    return length;
+  }
+
+  bool checkEqual(Particle& particle1, Particle& particle2) {
+    return (particle1.getPosition() == particle2.getPosition() &&
+    particle1.getVelocity() == particle2.getVelocity() &&
+    particle1.getRadius() == particle2.getRadius());
   }
 
  public:
@@ -29,10 +38,10 @@ class Simulation {
   Simulation(const std::vector<Particle>& particle_list, double maxX, double maxY);//this will use the given list of particles
 
   void update();//updates every particles' position
-  void handleCollision(Particle &particle);//checks for collisions with both particles and wall then changes velocity accordingly
+  Particle & handleCollision(Particle &particle);//checks for collisions with both particles and wall then changes velocity accordingly
 
-  void wallCollision(Particle& particle);
-  void particleCollision(Particle& particle1, Particle& particle2);
+  Particle & wallCollision(Particle& particle);
+  Particle & particleCollision(Particle& particle1, Particle& particle2);
 
   std::vector<Particle>& getParticles();
 };

@@ -8,7 +8,7 @@
 
 const int windowSize = 750;
 
-const int numParticles = 5;
+const int numParticles = 10;
 const double maxBound = 10;
 
 const double windowBoundProp = windowSize/maxBound;
