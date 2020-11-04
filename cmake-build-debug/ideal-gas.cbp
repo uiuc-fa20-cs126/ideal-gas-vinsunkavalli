@@ -35,13 +35,13 @@
 					<Add option="-D_SCL_SECURE_NO_WARNINGS"/>
 					<Add directory="C:/Users/buddi/Cinder/my-projects/ideal-gas-vinsunkavalli/include"/>
 					<Add directory="C:/Users/buddi/Cinder/include"/>
-					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VC\Tools\MSVC\14.27.29110\include"/>
-					<Add directory="C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um"/>
+					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\INCLUDE"/>
+					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\ATLMFC\INCLUDE"/>
 					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\ucrt"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um"/>
 					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\shared"/>
 					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um"/>
 					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\winrt"/>
-					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\cppwinrt"/>
 				</Compiler>
 				<MakeCommands>
 					<Build command="nmake /NOLOGO /f C:\Users\buddi\Cinder\my-projects\ideal-gas-vinsunkavalli\cmake-build-debug\Makefile VERBOSE=1 cinder-simulation"/>
@@ -68,13 +68,13 @@
 					<Add option="-D_SCL_SECURE_NO_WARNINGS"/>
 					<Add directory="C:/Users/buddi/Cinder/my-projects/ideal-gas-vinsunkavalli/include"/>
 					<Add directory="C:/Users/buddi/Cinder/include"/>
-					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VC\Tools\MSVC\14.27.29110\include"/>
-					<Add directory="C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um"/>
+					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\INCLUDE"/>
+					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\ATLMFC\INCLUDE"/>
 					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\ucrt"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um"/>
 					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\shared"/>
 					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um"/>
 					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\winrt"/>
-					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\cppwinrt"/>
 				</Compiler>
 				<MakeCommands>
 					<Build command="nmake /NOLOGO /f C:\Users\buddi\Cinder\my-projects\ideal-gas-vinsunkavalli\cmake-build-debug\Makefile VERBOSE=1 cinder-simulation/fast"/>
@@ -112,13 +112,13 @@
 					<Add directory="C:/Users/buddi/Cinder/my-projects/ideal-gas-vinsunkavalli/include"/>
 					<Add directory="C:/Users/buddi/Cinder/my-projects/ideal-gas-vinsunkavalli/cmake-build-debug/_deps/catch2-src/single_include"/>
 					<Add directory="C:/Users/buddi/Cinder/include"/>
-					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VC\Tools\MSVC\14.27.29110\include"/>
-					<Add directory="C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um"/>
+					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\INCLUDE"/>
+					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\ATLMFC\INCLUDE"/>
 					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\ucrt"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um"/>
 					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\shared"/>
 					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um"/>
 					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\winrt"/>
-					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\cppwinrt"/>
 				</Compiler>
 				<MakeCommands>
 					<Build command="nmake /NOLOGO /f C:\Users\buddi\Cinder\my-projects\ideal-gas-vinsunkavalli\cmake-build-debug\Makefile VERBOSE=1 ideal-gas-test"/>
@@ -146,13 +146,13 @@
 					<Add directory="C:/Users/buddi/Cinder/my-projects/ideal-gas-vinsunkavalli/include"/>
 					<Add directory="C:/Users/buddi/Cinder/my-projects/ideal-gas-vinsunkavalli/cmake-build-debug/_deps/catch2-src/single_include"/>
 					<Add directory="C:/Users/buddi/Cinder/include"/>
-					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VC\Tools\MSVC\14.27.29110\include"/>
-					<Add directory="C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um"/>
+					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\INCLUDE"/>
+					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\ATLMFC\INCLUDE"/>
 					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\ucrt"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um"/>
 					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\shared"/>
 					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um"/>
 					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\winrt"/>
-					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\cppwinrt"/>
 				</Compiler>
 				<MakeCommands>
 					<Build command="nmake /NOLOGO /f C:\Users\buddi\Cinder\my-projects\ideal-gas-vinsunkavalli\cmake-build-debug\Makefile VERBOSE=1 ideal-gas-test/fast"/>

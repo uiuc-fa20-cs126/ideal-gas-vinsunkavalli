@@ -64,7 +64,7 @@ ci_make_app(
 ci_make_app(
         APP_NAME ideal-gas-test
         CINDER_PATH ${CINDER_PATH}
-        SOURCES ${SOURCE_FILES} ${TEST_FILES}
+        SOURCES ${TEST_FILES} ${SOURCE_FILES}
         INCLUDES include
         LIBRARIES catch2
 )

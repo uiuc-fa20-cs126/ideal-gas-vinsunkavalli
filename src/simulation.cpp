@@ -1,11 +1,11 @@
 #include <simulation.h>
 
 const int radius = 1;
-const double velPosScale = 10;//velocity should be smaller than pos, so dividing by this
+const double velPosScale = 100;//velocity should be smaller than pos, so dividing by this
 
 Simulation::Simulation(int num_particles, double maxX, double maxY) {
   for(size_t i = 0; i < (unsigned) num_particles; ++i) {
-    particles.push_back(Particle(1, std::rand() * maxX, std::rand() * maxY, (std::rand() * maxX)/velPosScale, (std::rand() * maxY)/velPosScale));
+    particles.push_back(Particle(1, (std::rand() % 10 / 10.0) * maxX, (std::rand() % 10 / 10.0) * maxY, ((std::rand() % 10 / 10.0) * maxX)/velPosScale, ((std::rand() % 10 / 10.0) * maxY)/velPosScale));
   }
 
   boundX = maxX;
@@ -33,10 +33,8 @@ std::vector<Particle> & Simulation::getParticles() {
 
 void Simulation::update() {
   for(size_t i = 0; i < particles.size(); ++i) {
-    Particle particle = particles[i];
-    particle.updatePosition();
-
-    handleCollision(particle);
+    particles[i].updatePosition();
+    //handleCollision(particle);
   }
 }
 
