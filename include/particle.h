@@ -18,6 +18,7 @@ class Particle {
   glm::vec2 getVelocity();
 
   void setVelocity(double velX, double velY);//used for collisions - handled in simulation
+  void setPosition(glm::vec2 newPos);
   double getRadius();
 };
 

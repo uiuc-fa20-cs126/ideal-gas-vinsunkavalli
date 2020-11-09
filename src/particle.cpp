@@ -23,6 +23,10 @@ void Particle::setVelocity(double velX, double velY) {
   velocity = glm::vec2(velX, velY);
 }
 
+void Particle::setPosition(glm::vec2 newPos) {
+  position = newPos;
+}
+
 void Particle::updatePosition() {
   position += velocity;
 }
