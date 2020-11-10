@@ -12,13 +12,13 @@ TEST_CASE("Particle") {
     REQUIRE(test_particle.getPosition() == glm::vec2(0, 0));
   }
 
-  SECTION("Updating particle position") {
+  SECTION("Updating particle position_") {
     Particle test_particle = Particle(1.0, 0.0, 0.0, 0.0, 0.0);
     test_particle.updatePosition();
     REQUIRE(test_particle.getPosition() == glm::vec2(0,0));
   }
 
-  SECTION("Manually setting particle velocity") {
+  SECTION("Manually setting particle velocity_") {
     Particle test_particle = Particle(1.0, 0.0, 0.0, 0.0, 0.0);
     test_particle.setVelocity(0.1, 0.1);
     REQUIRE(test_particle.getVelocity() == glm::vec2(0.1, 0.1));

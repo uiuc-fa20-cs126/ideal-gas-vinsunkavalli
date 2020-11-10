@@ -6,12 +6,14 @@
 
 #include <simulation.h>
 
-const int windowSize = 750;
+const int kWindowSize = 750;
 
-const int numParticles = 10;
-const double maxBound = 10;
+const int kRectSize = 500;
 
-const double windowBoundProp = windowSize/maxBound;
+const int kNumParticles = 99;
+const double kMaxBound = 10;
+
+const double kRectBoundProp = kRectSize/kMaxBound;
 
  class IdealGasApp: public ci::app::App{
  public:
@@ -20,11 +22,11 @@ const double windowBoundProp = windowSize/maxBound;
     void draw() override;
     void update() override;
  private:
-   Simulation particle_simulation_ = Simulation(numParticles, maxBound, maxBound);
+   Simulation particle_simulation_ = Simulation(kNumParticles, kMaxBound, kMaxBound);
 };
 
 IdealGasApp::IdealGasApp() {
-  ci::app::setWindowSize(windowSize, windowSize);
+  ci::app::setWindowSize(kWindowSize, kWindowSize);
 }
 
 void IdealGasApp::draw() {
@@ -34,10 +36,20 @@ void IdealGasApp::draw() {
 
   ci::gl::color(ci::Color("white"));
 
+  ci::gl::drawStrokedRect(ci::Rectf(0.0f, 0.0f, (float) kRectSize + 1, (float) kRectSize + 1));
 
   for(Particle particle:particles) {
-    ci::gl::drawSolidCircle(particle.getPosition() * glm::vec2(windowBoundProp, windowBoundProp),
-                            (float) (particle.getRadius() * windowBoundProp));
+    double mass = particle.getMass();
+    if(mass == 0.5) {
+      ci::gl::color(ci::Color("red"));
+    }else if(mass == 1) {
+      ci::gl::color(ci::Color("blue"));
+    } else if(mass == 1.5) {
+      ci::gl::color(ci::Color("green"));
+    }
+
+    ci::gl::drawSolidCircle(particle.getPosition() * glm::vec2(kRectBoundProp, kRectBoundProp),
+                            (float) (particle.getRadius() * kRectBoundProp));
   }
 }
 
