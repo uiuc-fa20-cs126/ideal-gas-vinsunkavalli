@@ -175,6 +175,10 @@
 		<Unit filename="C:/Users/buddi/Cinder/my-projects/ideal-gas-vinsunkavalli/app/cinder_main.cpp">
 			<Option target="cinder-simulation"/>
 		</Unit>
+		<Unit filename="C:/Users/buddi/Cinder/my-projects/ideal-gas-vinsunkavalli/src/idealgasapp.cpp">
+			<Option target="cinder-simulation"/>
+			<Option target="ideal-gas-test"/>
+		</Unit>
 		<Unit filename="C:/Users/buddi/Cinder/my-projects/ideal-gas-vinsunkavalli/src/particle.cpp">
 			<Option target="cinder-simulation"/>
 			<Option target="ideal-gas-test"/>

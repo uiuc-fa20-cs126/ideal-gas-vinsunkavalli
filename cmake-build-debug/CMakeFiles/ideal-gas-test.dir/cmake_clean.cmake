@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/ideal-gas-test.dir/src/idealgasapp.cpp.obj"
   "CMakeFiles/ideal-gas-test.dir/src/particle.cpp.obj"
   "CMakeFiles/ideal-gas-test.dir/src/simulation.cpp.obj"
   "CMakeFiles/ideal-gas-test.dir/test/test_main.cpp.obj"

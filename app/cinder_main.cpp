@@ -1,8 +1,10 @@
+#pragma once
+
 #include "cinder/app/App.h"
 #include "cinder/app/RendererGl.h"
 #include "cinder/gl/gl.h"
 
-#include <ideal_gas_app.h>
+#include <idealgasapp.h>
 
 void prepareSettings(ci::app::App::Settings* settings) {
   settings->setResizable(false);

@@ -167,6 +167,36 @@ app\cinder_main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\cinder-simulation.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\cinder-simulation.dir\app\cinder_main.cpp.s
 .PHONY : app\cinder_main.cpp.s
 
+src\idealgasapp.obj: src\idealgasapp.cpp.obj
+
+.PHONY : src\idealgasapp.obj
+
+# target to build an object file
+src\idealgasapp.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\cinder-simulation.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\cinder-simulation.dir\src\idealgasapp.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ideal-gas-test.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ideal-gas-test.dir\src\idealgasapp.cpp.obj
+.PHONY : src\idealgasapp.cpp.obj
+
+src\idealgasapp.i: src\idealgasapp.cpp.i
+
+.PHONY : src\idealgasapp.i
+
+# target to preprocess a source file
+src\idealgasapp.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\cinder-simulation.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\cinder-simulation.dir\src\idealgasapp.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ideal-gas-test.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ideal-gas-test.dir\src\idealgasapp.cpp.i
+.PHONY : src\idealgasapp.cpp.i
+
+src\idealgasapp.s: src\idealgasapp.cpp.s
+
+.PHONY : src\idealgasapp.s
+
+# target to generate assembly for a file
+src\idealgasapp.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\cinder-simulation.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\cinder-simulation.dir\src\idealgasapp.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ideal-gas-test.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\ideal-gas-test.dir\src\idealgasapp.cpp.s
+.PHONY : src\idealgasapp.cpp.s
+
 src\particle.obj: src\particle.cpp.obj
 
 .PHONY : src\particle.obj
@@ -267,6 +297,9 @@ help:
 	@echo ... app/cinder_main.obj
 	@echo ... app/cinder_main.i
 	@echo ... app/cinder_main.s
+	@echo ... src/idealgasapp.obj
+	@echo ... src/idealgasapp.i
+	@echo ... src/idealgasapp.s
 	@echo ... src/particle.obj
 	@echo ... src/particle.i
 	@echo ... src/particle.s
