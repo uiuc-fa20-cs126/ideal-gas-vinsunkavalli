@@ -1,7 +1,7 @@
 #include <simulation.h>
 
 const double kRadius = 0.2;
-static const double kMasses[] {0.5, 1, 1.5};
+const double kMasses[] {0.5, 1, 1.5};
 const double kVelPosScale = 100;//velocity_ should be smaller than pos, so dividing by this
 
 Simulation::Simulation(int num_particles, double maxX, double maxY) {
@@ -41,7 +41,6 @@ void Simulation::update() {
 
     particles[i] = particle;
     particles[i].updatePosition();
-    //particles[i].setPosition(posCheck(particles[i], boundX, boundY));
   }
 }
 
@@ -82,17 +81,22 @@ void Simulation::particleCollision(Particle &particle1, Particle &particle2) {
   glm::vec2 vel1 = particle1.getVelocity();
   glm::vec2 vel2 = particle2.getVelocity();
 
+  double mass1 = particle1.getMass();
+  double mass2 = particle2.getMass();
+
   glm::vec2 newVel1;
   glm::vec2 newVel2;
 
   double length = (particleDistance(particle1, particle2));
   double posCoeff = glm::dot((vel1-vel2), (pos1-pos2))/(length * length);
+  double massCoeff = (2 * mass2)/(mass1 + mass2);
 
-  newVel1 = vel1 - (glm::vec2(posCoeff, posCoeff) * (pos1 - pos2));
+  newVel1 = vel1 - (glm::vec2(massCoeff * posCoeff, massCoeff * posCoeff) * (pos1 - pos2));
 
   posCoeff = glm::dot((vel2-vel1), (pos2-pos1))/(length * length);
+  massCoeff = (2 * mass1)/(mass1 + mass2);
 
-  newVel2 = vel2 - (glm::vec2(posCoeff, posCoeff) * (pos2 - pos1));
+  newVel2 = vel2 - (glm::vec2(massCoeff * posCoeff, massCoeff * posCoeff) * (pos2 - pos1));
 
   particle1.setVelocity(newVel1.x, newVel1.y);
   particle2.setVelocity(newVel2.x, newVel2.y);
