@@ -36,14 +36,9 @@ void IdealGasApp::draw() {
   drawParticles(bigParticles, "green");
 
   //drawing histograms
-  drawHistogram(glm::vec2(kWindowSize - kHistogramSize, 0), smallParticles, "red", kHistogramSize);
-  ci::gl::drawString("small particles (mass < avg)", glm::vec2(kWindowSize - kHistogramSize, 0));
-
-  drawHistogram(glm::vec2(kWindowSize - kHistogramSize, kHistogramSize), regularParticles, "blue", kHistogramSize);
-  ci::gl::drawString("regular particles (mass == avg)", glm::vec2(kWindowSize - kHistogramSize, kHistogramSize));
-
-  drawHistogram(glm::vec2(kWindowSize - kHistogramSize, 2 * kHistogramSize), bigParticles, "green", kHistogramSize);
-  ci::gl::drawString("big particles (mass > avg)", glm::vec2(kWindowSize - kHistogramSize, 2 * kHistogramSize));
+  drawHistogram(glm::vec2(kWindowSize - kHistogramSize, 0), smallParticles, "red", "small particles (mass < avg)");
+  drawHistogram(glm::vec2(kWindowSize - kHistogramSize, kHistogramSize), regularParticles, "blue", "regular particles (mass = avg)");
+  drawHistogram(glm::vec2(kWindowSize - kHistogramSize, 2 * kHistogramSize), bigParticles, "green", "big particles (mass > avg)");
 
 }
 
@@ -63,6 +58,9 @@ void IdealGasApp::drawParticles(std::vector<Particle>& particles, char *const co
 void IdealGasApp::drawHistogram(glm::vec2 position,
                                 std::vector<Particle> &particles,
                                 char *const color,
+                                std::string title,
+                                std::string x_axis,
+                                std::string y_axis,
                                 double histogram_size,
                                 double num_bins,
                                 double max) {
@@ -87,4 +85,8 @@ void IdealGasApp::drawHistogram(glm::vec2 position,
                                     (float) (position.y + histogram_size - (histogram_size * height)/particles.size())));
   }
 
+  ci::gl::drawString(title, position);
+
+  ci::gl::drawString(x_axis, glm::vec2(position.x + (8.0/10) * histogram_size, position.y + (9.0/10) * histogram_size));
+  ci::gl::drawString(y_axis, glm::vec2(position.x, position.y + (1.0/10) * histogram_size));
 }

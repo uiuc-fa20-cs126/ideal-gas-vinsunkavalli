@@ -17,9 +17,13 @@ class Simulation {
   Simulation(int num_particles, double maxX, double maxY);//this will generate random particles
   Simulation(const std::vector<Particle>& particle_list, double maxX, double maxY);//this will use the given list of particles
 
-  void update();//updates every particles' position_
-  void handleCollision(Particle &particle);//checks for collisions with both particles and wall then changes velocity_ accordingly
+  //updates every particles' position based on velocity, handling collisions as well
+  void update();
 
+  //checks for collisions with both particles and wall then changes velocity_ accordingly
+  void handleCollision(Particle &particle);
+
+  //does math for collisions against wall/particle and changes velocity accordingly
   void wallCollision(Particle& particle);
   void particleCollision(Particle& particle1, Particle& particle2);
 
